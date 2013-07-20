@@ -47,9 +47,13 @@
           <a class="brand" href="#">TheStation</a>
           <div class="container-fluid nav-collapse">
             <ul class="nav">
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
+            <% if user_signed_in? %>
+              <li><a href="#">welcome <%= current_user.email %></a></li>
+              <li><%= link_to "Logout", destroy_user_session_path  %></li>
+            <%else%>
+              <li><%= link_to "Login", new_user_session_path %></li>
+              <li><%= link_to "New User", new_user_registration_path  %></li>
+            <%end%>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -60,12 +64,11 @@
       <div class="row-fluid">
         <div class="span3">
           <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-              <li class="nav-header">Sidebar</li>
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
+          	  <h3>What is TheStation</h3>
+              The idea of trading things is very old. A long time ago, people did not buy or sell with money. 
+              Instead, they traded one thing for another to get what they wanted or needed.
+              Each would trade a little of what he had with the other, and support the people on his farm. 
+              <a href="/">TheStation</a> is your farm where you can trade your skills.
           </div><!--/.well -->
         </div><!--/span-->
         <div class="span9">

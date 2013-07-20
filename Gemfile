@@ -16,7 +16,10 @@ group :assets do
   # gem 'therubyracer', platforms: :ruby
 
   gem 'uglifier', '>= 1.0.3'
+  gem "twitter-bootstrap-rails"
 end
+
+gem 'devise'
 
 gem 'jquery-rails'
 
@@ -27,8 +30,7 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.0.1'
 
 gem "therubyracer"
-gem "less-rails" #Sprockets (what Rails 3.1 uses for its asset pipeline) supports LESS
-gem "twitter-bootstrap-rails"
+
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
